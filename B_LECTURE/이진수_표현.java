@@ -1,8 +1,10 @@
+package B_LECTURE;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
  
-class  Solution{
+class  이진수_표현 {
     public static void main(String args[]) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int T;
