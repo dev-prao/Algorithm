@@ -1,0 +1,14 @@
+
+	java:S101	"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Í¿úÙ8¦æ¡¡ƒ2J$23f93ea9-e85d-4c3e-b4b8-abfd9a38ede3
+“	java:S117v"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒèÀ™8¦æ¡¡ƒ2J$96b33785-8331-4d0a-8a9d-028e904eeef8
+“	java:S117}"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»ì£‹8¦æ¡¡ƒ2J$094ac014-7888-4a9c-8063-3462243643b1
+”	java:S117…"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×ïšÄ8¦æ¡¡ƒ2J$f0d00085-2ef4-4c4f-98f2-f20fa9d1a01e
+ˆ	java:S112j"FDefine and throw a dedicated exception instead of using a generic one.(…§8ªæ¡¡ƒ2J$faa839a2-441a-421f-9a4c-1609c9722997
+–
+java:S3008
+"SRename this field "NODE_MAX" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šïƒõ8¬æ¡¡ƒ2J$b604835d-218f-4aea-b2e9-127a1ddba3de
+š
+java:S3776t"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(ÙØ¤Şıÿÿÿÿ8Øæ¡¡ƒ2J$2372ef7d-7c1b-41d6-902c-f35174300a42
+h
+java:S1659‰"Declare "y" on a separate line.(¡Ê²‘şÿÿÿÿ8Úæ¡¡ƒ2J$96467e75-fc88-4e25-a8fa-929c227fdc24
+j	java:S131Š""Add a default case to this switch.(Ï—íàıÿÿÿÿ8Üæ¡¡ƒ2J$621cf87d-52d4-4df7-a348-ac4d28cc16da

@@ -1,91 +1,45 @@
 package baekjoon;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Deque;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Main2 {
-	static class Point {
-		int r;
-		int c;
-
-		public Point(int r, int c) {
-			this.r = r;
-			this.c = c;
-		}
-	}
-
-	static int N, M, answer;
-	static int[] dr = {-1, -1, -1, 0, 0, 1, 1, 1};
-	static int[] dc = {-1, 0, 1, -1, 1, -1, 0, 1};
-	static int[][] map;
-	static boolean[][] visit, top;
-	static Deque<Point> q;
-
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
-		N = Integer.parseInt(st.nextToken());
-		M = Integer.parseInt(st.nextToken());
 
-		map = new int[N][M];
-		visit = new boolean[N][M];
-		top = new boolean[N][M];
+		int N = Integer.parseInt(st.nextToken());
+		int M = Integer.parseInt(st.nextToken());
+		int L = Integer.parseInt(st.nextToken());
+		st = new StringTokenizer(br.readLine());
+		int[] arr = new int[N + 2];
 
-		for (int i = 0; i < N; i++) {
-			st = new StringTokenizer(br.readLine());
-			for (int j = 0; j < M; j++) {
-				map[i][j] = Integer.parseInt(st.nextToken());
+		arr[0] = 0; //시작
+		arr[N + 1] = L; //끝
+		for (int i = 1; i <= N; i++) {
+			arr[i] = Integer.parseInt(st.nextToken());
+		}
+		Arrays.sort(arr);
+
+		int left = 1;
+		int right = L - 1;
+
+		while (left <= right) {
+			int mid = (left + right) / 2;
+			int sum = 0;
+
+			for (int i = 1; i < arr.length; i++) {
+				sum += (arr[i] - arr[i - 1] - 1) / mid; //딱 맞아 떨어지면 이미 휴게소 세워진 구간
+			}
+
+			if (sum > M) {
+				left = mid + 1;
+			} else {
+				right = mid - 1;
 			}
 		}
-
-		for (int i = 0; i < N; i++) {
-			for (int j = 0; j < M; j++) {
-				if (map[i][j] != 0 && top[i][j]) {
-					bfs(i, j);
-				}
-			}
-		}
-
-		System.out.println(answer);
-
-	}
-
-	static void bfs(int r, int c) {
-		visit = new boolean[N][M];
-		visit[r][c] = true;
-		q = new ArrayDeque<>();
-		q.add(new Point(r, c));
-		ArrayList<Point> topList = new ArrayList<>();
-		while (!q.isEmpty()) {
-			Point cur = q.poll();
-
-			for (int d = 0; d < 8; d++) {
-				int nr = cur.r + dr[d];
-				int nc = cur.c + dc[d];
-				if (isValid(nr, nc) && !visit[nr][nc]) {
-					if (map[nr][nc] > map[cur.r][cur.c]) return;
-					if (map[nr][nc] == map[cur.r][cur.c]) {
-						q.add(new Point(nr, nc));
-						topList.add(new Point(nr, nc));
-					}
-					visit[nr][nc] = true;
-				}
-			}
-		}
-
-		for (Point cur : topList) {
-			top[cur.r][cur.c] = true;
-		}
-
-		answer++;
-	}
-
-	static boolean isValid(int r, int c) {
-		return r >= 0 && c >= 0 && r < N && c < M;
+		System.out.println(left);
 	}
 }

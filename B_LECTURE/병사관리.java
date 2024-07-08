@@ -1,6 +1,6 @@
 package B_LECTURE;// author: 류호석(rhs0266)
 
-class 병사_관리
+class 병사관리
 {
     public class Node {
         int id;
