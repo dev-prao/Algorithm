@@ -16,6 +16,7 @@ public class Main2 {
 		st = new StringTokenizer(br.readLine());
 		int[] arr = new int[N + 2];
 
+
 		arr[0] = 0; //시작
 		arr[N + 1] = L; //끝
 		for (int i = 1; i <= N; i++) {
