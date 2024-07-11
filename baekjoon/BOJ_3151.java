@@ -12,6 +12,7 @@ public class BOJ_3151 {
         // 첫 번째 입력값으로 배열의 크기를 받음
         int n = Integer.parseInt(br.readLine());
         // 입력값을 저장할 배열 생성
+
         int[] arr = new int[n];
 
         // 배열 요소를 입력받아 저장
