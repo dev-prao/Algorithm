@@ -15,6 +15,7 @@ class 이진수_표현 {
             int M = Integer.parseInt(st.nextToken());
  
             int lastNBit = (1 << (N)) - 1;  // 111...1 (길이 N)
+
             if( lastNBit == (M & lastNBit)){
                 System.out.println("#" + test_case + " " + "ON");
             }else{
