@@ -24,6 +24,7 @@ public class 택배_마스터_광우 {
 		for(int i=0; i < N; i++){
 			arr[i] = Integer.parseInt(st.nextToken());
 		}
+
 		dfs(0);
 		System.out.println(answer);
 	}
