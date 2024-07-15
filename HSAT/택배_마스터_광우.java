@@ -33,6 +33,7 @@ public class 택배_마스터_광우 {
 	static void dfs(int cnt) {
 		if(cnt == N) {
 			getResult();
+
 			return;
 		}
 
