@@ -8,6 +8,7 @@ public class 택배_마스터_광우 {
 	static int N, M, K;
 	static int[] arr;
 	static boolean[] visit;
+
 	static int[] result;
 	static int answer = Integer.MAX_VALUE;
 
