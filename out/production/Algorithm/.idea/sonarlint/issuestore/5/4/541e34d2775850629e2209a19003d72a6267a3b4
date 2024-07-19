@@ -1,0 +1,10 @@
+
+”	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(÷®Àüÿÿÿÿ8ºÈ¿¡ƒ2J$29927710-0de7-4810-93a7-b93f5f4f55c0
+”
+java:S3008"LRename this field "N" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ð£áœüÿÿÿÿ8»È¿¡ƒ2J$b3f9b20a-d861-409f-965f-ab7085ec57b7
+”
+java:S3008"LRename this field "M" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ð£áœüÿÿÿÿ8¼È¿¡ƒ2J$2311f6aa-1def-4b35-8131-db69756a4320
+”
+java:S3008"LRename this field "K" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ð£áœüÿÿÿÿ8¼È¿¡ƒ2J$f01144ee-6d9d-4df9-b9ab-39171683ef8e
+†
+java:S1659">Declare "M" and all following declarations on a separate line.(Ð£áœüÿÿÿÿ8¾È¿¡ƒ2J$327dc491-5d61-40c8-afc7-94a6b30179a4

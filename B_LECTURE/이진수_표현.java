@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
  
-class  이진수_표현 {
+class 이진수_표현 {
     public static void main(String args[]) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int T;
@@ -15,6 +15,7 @@ class  이진수_표현 {
             int M = Integer.parseInt(st.nextToken());
  
             int lastNBit = (1 << (N)) - 1;  // 111...1 (길이 N)
+
             if( lastNBit == (M & lastNBit)){
                 System.out.println("#" + test_case + " " + "ON");
             }else{

@@ -1,8 +1,10 @@
+package B_LECTURE;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-class Solution
+class 수열편집_ArrayList
 {
     public static void main(String args[]) throws Exception
     {

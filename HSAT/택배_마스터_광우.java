@@ -8,6 +8,7 @@ public class 택배_마스터_광우 {
 	static int N, M, K;
 	static int[] arr;
 	static boolean[] visit;
+
 	static int[] result;
 	static int answer = Integer.MAX_VALUE;
 
@@ -24,6 +25,8 @@ public class 택배_마스터_광우 {
 		for(int i=0; i < N; i++){
 			arr[i] = Integer.parseInt(st.nextToken());
 		}
+
+
 		dfs(0);
 		System.out.println(answer);
 	}
@@ -31,6 +34,7 @@ public class 택배_마스터_광우 {
 	static void dfs(int cnt) {
 		if(cnt == N) {
 			getResult();
+
 			return;
 		}
 

@@ -1,0 +1,5 @@
+
+”	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Ä§¤ùÿÿÿÿ8¨ç’Ì2J$4153e0de-6e63-4bdc-9ada-86616539e490
+“	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»ì£‹8©ç’Ì2J$1067c244-f211-4e74-bb4b-ed2a7077e06c
+r
+java:S1197"*Move the array designators [] to the type.(íä¸üÿÿÿÿ8«ç’Ì2J$bbfe4318-1e5e-400f-9422-1b73d1c25d61

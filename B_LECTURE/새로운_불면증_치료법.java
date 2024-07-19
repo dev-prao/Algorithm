@@ -1,3 +1,5 @@
+package B_LECTURE;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 class 새로운_불면증_치료법

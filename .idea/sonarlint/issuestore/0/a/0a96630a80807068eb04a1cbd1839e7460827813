@@ -1,0 +1,22 @@
+
+”	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(£’ÜÚüÿÿÿÿ8üş•Ì2J$315a33fc-c452-44b1-8c6b-b58e5f4e06a8
+“
+java:S1104"PMake node a static final constant or non-public and provide accessors if needed.(Ø£‰‰8é¹•Ì2J$bcfa64ac-056b-45d2-b387-deae8b15aef7
+’
+java:S1104"OMake cnt a static final constant or non-public and provide accessors if needed.(Õ´Õè8é¹•Ì2J$6e487d71-7ec8-4ed2-9a4e-3d8423fc410d
+–
+java:S1104"SMake version a static final constant or non-public and provide accessors if needed.(í‹¶„8é¹•Ì2J$36572400-af65-4431-98c6-cdfc7d241990
+—
+java:S1104"OMake num a static final constant or non-public and provide accessors if needed.(Ç¼Ÿıÿÿÿÿ8é¹•Ì2J$a9ea7717-2777-4f1d-a4b6-9dff409ba20e
+•
+java:S1104+"MMake t a static final constant or non-public and provide accessors if needed.(ë­Ûóüÿÿÿÿ8é¹•Ì2J$8ef641af-94b3-4bcb-93ae-a9208f473d75
+š	java:S135P"YReduce the total number of break and continue statements in this loop to use at most one.(ÀÛ‚-8ë¹•Ì2J$2c0721a2-cf13-4b82-b9d0-29f63f454125
+›	java:S135]"YReduce the total number of break and continue statements in this loop to use at most one.(œ¾ğ¹8ë¹•Ì2J$d1c9f6b5-d711-4469-92ef-17e3308b9c59
+š
+java:S3776N"RRefactor this method to reduce its Cognitive Complexity from 32 to the 15 allowed.(ä®İ­øÿÿÿÿ8ñ¹•Ì2J$51517321-7b3c-4c6a-be39-30c54d249be4
+‡
+java:S3358R"DExtract this nested ternary operation into an independent statement.(êôÒü8ñ¹•Ì2J$5da86b51-091f-45fb-a6ab-f21d1e187a8d
+‡
+java:S3358_"DExtract this nested ternary operation into an independent statement.(êôÒü8ñ¹•Ì2J$06657264-f62f-4bc9-8b54-e7bbaef37ef5
+€
+java:S1117m"8Rename "node" which hides the field declared at line 25.(»ôàÿÿÿÿÿ8ò¹•Ì2J$75455ffd-ea1a-43b3-b01b-fe921d788c2b

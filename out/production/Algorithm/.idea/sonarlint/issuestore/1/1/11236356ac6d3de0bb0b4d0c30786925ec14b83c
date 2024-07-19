@@ -1,0 +1,13 @@
+
+i
+java:S3008"LRename this field "M" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³®ı†8úÿË2
+i
+java:S3008"LRename this field "N" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³®ı†8úÿË2
+G
+java:S1659	"%Declare "mapCopy" on a separate line.(¿áÛ¯ùÿÿÿÿ8úÿË2
+[
+java:S1659">Declare "M" and all following declarations on a separate line.(³®ı†8úÿË2
+=
+java:S1659Q" Declare "nc" on a separate line.(ş¥š°8šúÿË2
+w
+java:S3012ˆ"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(î«‚×8úÿË2
