@@ -8,95 +8,91 @@ import java.util.StringTokenizer;
 
 public class Main {
 
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int T = Integer.parseInt(br.readLine());
-		int n = Integer.parseInt(br.readLine());
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int T = Integer.parseInt(br.readLine());
 
-		int[] A = new int[n];
-		StringTokenizer st = new StringTokenizer(br.readLine());
-		A[0] = Integer.parseInt(st.nextToken());
+        int n = Integer.parseInt(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-		for (int i = 1; i < n; i++) {
-			A[i] = Integer.parseInt(st.nextToken()) + A[i - 1];
-		}
+        //A 배열의 누적합 저장
+        int[] A = new int[n];
+        A[0] = Integer.parseInt(st.nextToken());
 
+        for (int i = 1; i < A.length; i++) {
+            A[i] = A[i - 1] + Integer.parseInt(st.nextToken());
+        }
 
+        int m = Integer.parseInt(br.readLine());
+        st = new StringTokenizer(br.readLine());
 
-		int m = Integer.parseInt(br.readLine());
+        //B 배열의 누적합 저장
+        int[] B = new int[m];
+        B[0] = Integer.parseInt(st.nextToken());
 
-		int[] B = new int[m];
-		st = new StringTokenizer(br.readLine());
-		B[0] = Integer.parseInt(st.nextToken());
+        for (int i = 1; i < m; i++) {
+            B[i] = B[i - 1] + Integer.parseInt(st.nextToken());
+        }
 
-		for (int i = 1; i < m; i++) {
-			B[i] = Integer.parseInt(st.nextToken()) + B[i - 1];
-		}
+        //A, B 배열 각각의 배열로 만들 수 있는 모든 합 저장
+        int[] sumA = new int[n * (n + 1) / 2];
+        int[] sumB = new int[m * (m + 1) / 2];
 
-		int lenA = (n * (n + 1)) / 2;
-		int lenB = (m * (m + 1)) / 2;
-
-		int[] sumA = new int[lenA];
-
-		int idx = 0;
-		for (int i = 0; i < n; i++) {
-			for (int j = i; j < n; j++) {
-				if(i == 0) {
-					sumA[idx++] = A[j];
-					continue;
+        int idx = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = i; j < n; j++) {
+                int cur = A[j];
+				if (i > 0) {
+					cur -= A[i - 1];
 				}
-				sumA[idx++] = A[j] - A[i - 1];
-			}
-		}
+                sumA[idx++] = cur;
+            }
+        }
 
-		int[] sumB = new int[lenB];
-
-		idx = 0;
-		for (int i = 0; i < m; i++) {
-			for (int j = i; j < m; j++) {
-				if(i == 0) {
-					sumB[idx++] = B[j];
-					continue;
+        idx = 0;
+        for (int i = 0; i < m; i++) {
+            for (int j = i; j < m; j++) {
+                int cur = B[j];
+				if (i > 0) {
+					cur -= B[i - 1];
 				}
-				sumB[idx++] = B[j] - B[i - 1];
-			}
-		}
+                sumB[idx++] = cur;
+            }
+        }
 
-		Arrays.sort(sumA);
-		Arrays.sort(sumB);
+        Arrays.sort(sumA);
+        Arrays.sort(sumB);
 
-		int res = 0;
-		int left = 0;
-		int right = lenB - 1;
+        int left = 0;
+        int right = sumB.length - 1;
+        long cnt = 0;
 
-		while (left < lenA && right >= 0) {
-			int curA = sumA[left];
-			int curB = sumB[right];
-			int sum = curA + curB;
-			if (sum == T) {
-				int cntA = 0;
-				int cntB = 0;
-				while (left < lenA && sumA[left] == curA) {
-					cntA++;
-					left++;
-				}
+        while (left < sumA.length && right > -1) {
+            long curA = sumA[left], curB = sumB[right];
+            long sum = curA + curB;
+            if (sum == T) {
+                long cntA = 0, cntB = 0;
+                while (left < sumA.length && curA == sumA[left]) {
+                    left++;
+                    cntA++;
+                }
 
-				while (right >= 0 && sumB[right] == curB) {
-					cntB++;
-					right--;
-				}
+                while (right > -1 && curB == sumB[right]) {
+                    right--;
+                    cntB++;
+                }
+                cnt += cntA * cntB;
+            }
+            if (sum > T) {
 
-				res += cntA * cntB;
-				continue;
-			}
+                right--;
 
-			if (sum < T) {
-				left++;
-				continue;
-			}
+            } else if (sum < T) {
 
-			right--;
-		}
-		System.out.println(res);
-	}
+                left++;
+
+            }
+        }
+        System.out.println(cnt);
+    }
 }
