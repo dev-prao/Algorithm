@@ -1,46 +1,80 @@
 package baekjoon;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
+import java.util.HashMap;
 import java.util.StringTokenizer;
 
 public class Main2 {
-	public static void main(String[] args) throws Exception {
+
+	static int N, M;
+	static int total = 0;
+	static int index = 1;
+
+	static boolean[] canEscape;
+	static int[][] maze, visited;
+
+	static int[] dr = {-1, 0, 1, 0};
+	static int[] dc = {0, 1, 0, -1};
+	static HashMap<Character, Integer> directions = new HashMap<>();
+
+	public static void main(String[] args) throws IOException {
+
+		directions.put('U', 0);
+		directions.put('R', 1);
+		directions.put('D', 2);
+		directions.put('L', 3);
+
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
+		N = Integer.parseInt(st.nextToken());
+		M = Integer.parseInt(st.nextToken());
 
-		int N = Integer.parseInt(st.nextToken());
-		int M = Integer.parseInt(st.nextToken());
-		int L = Integer.parseInt(st.nextToken());
-		st = new StringTokenizer(br.readLine());
-		int[] arr = new int[N + 2];
+		maze = new int[N][M];
+		visited = new int[N][M];
 
+		canEscape = new boolean[N * M + 1];
 
-		arr[0] = 0; //시작
-		arr[N + 1] = L; //끝
-		for (int i = 1; i <= N; i++) {
-			arr[i] = Integer.parseInt(st.nextToken());
-		}
-		Arrays.sort(arr);
-
-		int left = 1;
-		int right = L - 1;
-
-		while (left <= right) {
-			int mid = (left + right) / 2;
-			int sum = 0;
-
-			for (int i = 1; i < arr.length; i++) {
-				sum += (arr[i] - arr[i - 1] - 1) / mid; //딱 맞아 떨어지면 이미 휴게소 세워진 구간
-			}
-
-			if (sum > M) {
-				left = mid + 1;
-			} else {
-				right = mid - 1;
+		for (int i = 0; i < N; i++) {
+			String input = br.readLine();
+			for (int j = 0; j < M; j++) {
+				char c = input.charAt(j);
+				maze[i][j] = directions.get(c);
 			}
 		}
-		System.out.println(left);
+
+		for (int i = 0; i < N; i++) {
+			for (int j = 0; j < M; j++) {
+				if (visited[i][j] != 0) continue;
+				dfs(i, j, 0);
+				index++;
+			}
+		}
+
+		System.out.println(total);
+		br.close();
+	}
+
+	public static void dfs(int r, int c, int count) {
+		if (isOutOfMap(r, c)) {
+			canEscape[index] = true;
+			total += count;
+			return;
+		}
+
+		if (visited[r][c] != 0 && canEscape[visited[r][c]]) {
+			canEscape[index] = true;
+			total += count;
+		}
+
+		if(visited[r][c] != 0) return;
+
+		visited[r][c] = index;
+		dfs(r + dr[maze[r][c]], c + dc[maze[r][c]], count + 1);
+	}
+
+	public static boolean isOutOfMap(int r, int c) {
+		return r < 0 || r >= N || c < 0 || c >= M;
 	}
 }

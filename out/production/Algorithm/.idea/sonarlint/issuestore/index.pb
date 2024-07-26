@@ -21,7 +21,5 @@ Z
 *B_LECTURE/암호문3_ArrayList_구현.java,c/d/cd469996d77b6044ddfcd467042a2b3b676329a0
 Q
 !HSAT/택배_마스터_광우.java,5/4/541e34d2775850629e2209a19003d72a6267a3b4
-O
-User(컨벤션 적용 후).java,2/2/22762668df122a15a7fb87f5eaff2e0212fa9822
-O
-User(컨벤션 적용 전).java,0/c/0c8603e8f1b6cd6a877e980b02e3057e54d289ee
+�
+Q.idea/sonarlint/securityhotspotstore/5/4/54b1a8b77e7dfb24a808f78e41c5464184783f27,f/a/fa4033e105a7ebdd10ac2d3d2ba537cd757caf6a
